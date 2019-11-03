@@ -9,10 +9,14 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  */
 public class MyThread extends Thread{
-	
+
 	private int count = 5 ;
-	
-	//synchronized加锁
+
+	/**
+	 * synchronized锁；
+	 * 若不加锁，则会导致多个线程同时处理count,打印结果成：33210；
+	 * 加锁后，先后处理run方法，count会顺序打出：43210；
+	 */
 	public void run(){
 		count--;
 		System.out.println(this.currentThread().getName() + " count = "+ count);
@@ -26,7 +30,7 @@ public class MyThread extends Thread{
 		 * 		2 如果拿到锁，执行synchronized代码体内容；拿不到锁，这个线程就会不断的尝试获得这把锁，直到拿到为止，
 		 * 		   而且是多个线程同时去竞争这把锁。（也就是会有锁竞争的问题）
 		 */
-		MyThread myThread = new MyThread();
+		MyThread myThread = new MyThread();//同一个类对象
 		Thread t1 = new Thread(myThread,"t1");
 		Thread t2 = new Thread(myThread,"t2");
 		Thread t3 = new Thread(myThread,"t3");

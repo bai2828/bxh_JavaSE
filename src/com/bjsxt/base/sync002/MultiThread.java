@@ -8,10 +8,15 @@ package com.bjsxt.base.sync002;
  *
  */
 public class MultiThread {
-
+	/**
+	 * static 类共享
+	 */
 	private int num = 0;
 	
-	/** static */
+	/** static
+	 * 不加static，锁是对象锁， 多个对象多个锁；
+	 * 加static，锁是类锁，多个对象一个锁；
+	 */
 	public synchronized void printNum(String tag){
 		try {
 			
