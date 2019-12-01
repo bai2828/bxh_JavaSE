@@ -1,6 +1,6 @@
 package com.bhx.base;
 
-public class Subject02 {
+public class Subject002 {
 
 
     /**

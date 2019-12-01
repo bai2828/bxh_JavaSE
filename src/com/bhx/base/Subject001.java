@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
  * 程序设计类
  * @param
  */
-public class Subject01 {
+public class Subject001 {
     //方法测试入口
     public static void main(String[] args) {
         int[] arr = {3,6,5,7,2,1,8};
