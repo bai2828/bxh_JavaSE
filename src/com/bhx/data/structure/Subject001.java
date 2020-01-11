@@ -31,19 +31,6 @@ public class Subject001 {
         return head;
     }
 
-    /**
-     * 递归实现单链表的转置
-     * @param head
-     * @return
-     */
-    public ListNode reverseList(ListNode head) {
-        if(head==null||head.next ==null)
-            return head;
-        ListNode prev = reverseList(head.next);
-        head.next.next = head;
-        head.next = null;
-        return prev;
-    }
 
     /**
      * 创建一个静态内部类，用静态修饰是为了在main方法中测试，需随着类的加载而产生。
