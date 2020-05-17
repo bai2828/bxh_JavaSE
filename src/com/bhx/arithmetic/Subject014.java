@@ -2,6 +2,9 @@ package com.bhx.arithmetic;
 
 import java.util.Arrays;
 
+/**
+ * 找出数组中最大的K个数
+ */
 public class Subject014 {
 
 
