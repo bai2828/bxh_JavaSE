@@ -25,7 +25,8 @@ public class AdjustExamPro {
             JSONObject json =jsonArray.getJSONObject(i);
             int seqno =i+1;
             if (seqno>1 && seqno<10){
-                String sql = "UPDATE eagle_jsd_voice_exam SET exam_code="+json.getIntValue("proCode")+",question='"+json.getString("text")+"',answer_choice='"+json.getString("selection")+"',answer_correct='#' WHERE ip_id="+ipId+" AND seqno="+seqno+";";
+//                String sql = "UPDATE eagle_jsd_voice_exam SET exam_code="+json.getIntValue("proCode")+",question='"+json.getString("text")+"',answer_choice='"+json.getString("selection")+"',answer_correct='#' WHERE ip_id="+ipId+" AND seqno="+seqno+";";
+                String sql = "UPDATE eagle_jsd_voice_exam SET seqno="+seqno+",question='"+json.getString("text")+"',answer_choice='"+json.getString("selection")+"',answer_correct='#' WHERE ip_id="+ipId+" AND exam_code="+json.getIntValue("proCode")+";";
                 System.out.println(sql);
             }
         }

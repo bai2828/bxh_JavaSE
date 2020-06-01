@@ -5,7 +5,7 @@ import java.io.File;
 public class Subject016 {
 
     public static void main(String[] args) {
-        String path ="E:\\视频资料\\Spring";
+        String path ="F:\\视频\\【千锋Java】dubbo+zookeeper分布式系统架构基础视频（11集）-经典";
         listFile(path);
     }
 
@@ -26,8 +26,8 @@ public class Subject016 {
         for(File file : files) {
             if (file.isFile()) {
                 System.out.println(file.getName());
-                if (file.getName().indexOf("__")>0){
-                    String newName = file.getName().replace("__","_佟刚_");
+                if (file.getName().contains("千锋Java教程：")){
+                    String newName = file.getName().replace("千锋Java教程：","");
                     File parentPath = file.getParentFile();
                     File newDir = new File(parentPath + "/" + newName);//文件所在文件夹路径+新文件名
                     file.renameTo(newDir);//重命名
